@@ -2,14 +2,27 @@ package main
 
 import "fmt"
 
+// struct generic
 func main() {
-	ints := map[string]int64{"first": 34, "second": 12}
-	floats := map[string]float64{"first": 35.98, "second": 26.99}
-	fmt.Printf("Generic Sum With Constrain : %v and %v\n",
-		SumNumberS2[string](ints),
-		SumNumberS2[string](floats),
-	)
+	var m1 UserMode[int]
+	m1.Name = "fani"
+	m1.Scores = []int{1, 2, 3}
+	fmt.Printf("score %#v\n", m1)
+
+	var m2 UserMode[float64]
+	m2.Name = "fani"
+	m2.SetScoresB([]float64{10, 11})
+	fmt.Printf("score %#v\n", m2)
 }
+
+// func main() {
+// 	ints := map[string]int64{"first": 34, "second": 12}
+// 	floats := map[string]float64{"first": 35.98, "second": 26.99}
+// 	fmt.Printf("Generic Sum With Constrain : %v and %v\n",
+// 		SumNumberS2[string](ints),
+// 		SumNumberS2[string](floats),
+// 	)
+// }
 
 // func main() {
 // 	// cara pertama pemanggilan function generic
